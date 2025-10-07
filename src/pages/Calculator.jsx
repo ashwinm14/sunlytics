@@ -111,7 +111,7 @@ export default function Calculator() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
     doc.setTextColor("#FFB400");
-    doc.text("☀️ Sunlytics Solar Report", 14, 20);
+    doc.text("Sunlytics Solar Report", 14, 20);
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
@@ -233,3 +233,4 @@ export default function Calculator() {
     </section>
   );
 }
+
