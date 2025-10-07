@@ -1,0 +1,121 @@
+.calculator {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #fff6d1 0%, #ffe58f 70%, #fffacd 100%);
+  color: #222;
+}
+
+.calculator-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.calculator-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.calculator-subtitle {
+  font-size: 1.2rem;
+  color: rgba(51,51,51,0.85);
+  margin-bottom: 40px;
+}
+
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  background: rgba(255, 223, 0, 0.08);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(194, 148, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(194, 148, 0, 0.35);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 14px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #f1b600;
+  box-shadow: 0 4px 12px rgba(241,182,0,0.2);
+}
+
+.dimension-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.calculator-btn {
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  background: #f1b600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculator-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(241,182,0,0.35);
+}
+
+/* Current location checkbox */
+.current-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+/* Roof details (slope & direction) */
+.roof-details {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dimension-inputs {
+    flex-direction: column;
+  }
+
+  .roof-details {
+    flex-direction: column;
+  }
+
+  .calculator-form {
+    padding: 20px;
+  }
+}

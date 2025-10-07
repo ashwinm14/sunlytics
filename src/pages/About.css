@@ -1,0 +1,198 @@
+/* Container for About section */
+.about {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #fff6d1 0%, #ffe58f 70%, #fffacd 100%);
+  color: #222;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Text Section */
+.about-text {
+  flex: 1 1 500px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.about-text.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-subtitle {
+  font-size: 1.4rem;
+  color: rgba(51,51,51,0.85);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(51,51,51,0.9);
+  margin-bottom: 30px;
+}
+
+/* Mission & Vision Boxes */
+.mission-vision {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mission-vision .box {
+  flex: 1 1 250px;
+  background: rgba(255, 223, 0, 0.08);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.mission-vision .box.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-vision .box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 700;
+}
+
+.mission-vision .box p {
+  font-size: 0.95rem;
+  color: rgba(51,51,51,0.85);
+  line-height: 1.5;
+}
+
+/* Image Section */
+.about-image {
+  flex: 1 1 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+.about-image.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  object-fit: cover;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Decorative floating circles */
+.floating-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 223, 0, 0.25);
+  border-radius: 50%;
+  top: -20px;
+  right: -20px;
+  z-index: 0;
+  animation: floatCircle 5s ease-in-out infinite alternate;
+}
+
+.floating-circle.small {
+  width: 50px;
+  height: 50px;
+  bottom: -10px;
+  left: -10px;
+  animation-duration: 4s;
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatCircle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+/* Scroll animation utility class */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .about-title { font-size: 2.6rem; }
+  .about-subtitle { font-size: 1.25rem; }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-text, .about-image {
+    transform: translateX(0);
+    animation: none;
+    opacity: 1;
+  }
+
+  .mission-vision {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about { padding: 60px 14px; }
+  .about-title { font-size: 2rem; }
+  .about-subtitle { font-size: 1rem; }
+  .about-desc { font-size: 0.95rem; }
+  .about-image img { max-width: 100%; }
+  .floating-circle { width: 50px; height: 50px; }
+}

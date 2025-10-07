@@ -1,0 +1,41 @@
+.footer {
+  background-color: #f59e0b;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #fff7e0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
+}

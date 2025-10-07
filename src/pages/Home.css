@@ -1,0 +1,150 @@
+/* Home Container */
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff9e6 0%, #fff1c2 100%);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating background shapes */
+.home::before,
+.home::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.home::before {
+  width: 400px;
+  height: 400px;
+  background: rgba(245, 158, 11, 0.3);
+  top: -100px;
+  left: -100px;
+}
+
+.home::after {
+  width: 500px;
+  height: 500px;
+  background: rgba(220, 38, 38, 0.2);
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Hero content */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* Title Animation */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideFadeIn 1s forwards;
+}
+
+/* Subtitle Animation */
+.hero-text {
+  font-size: 1.3rem;
+  color: #78350f;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s 0.5s forwards;
+}
+
+/* Call-to-action Button */
+.hero-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Floating icons/animated shapes (optional) */
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.floating-circle:nth-child(1) {
+  width: 50px; height: 50px;
+  background: #f59e0b;
+  top: 20%;
+  left: 10%;
+}
+
+.floating-circle:nth-child(2) {
+  width: 80px; height: 80px;
+  background: #d97706;
+  bottom: 25%;
+  right: 15%;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

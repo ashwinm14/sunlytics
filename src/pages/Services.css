@@ -1,0 +1,232 @@
+/* Container styling (hero-like section with yellow/golden gradient background) */
+.services {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7db86 60%, #ffeaac 100%);
+  color: #222;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services::after {
+  /* subtle solar panel/grid overlay (faded) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(242, 218, 9, 0.05) 1px, transparent 1px), linear-gradient(180deg, transparent, rgba(0,0,0,0.03));
+  background-size: 40px 40px, 100% 100%;
+  pointer-events: none;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-subtitle {
+  display: block;
+  font-size: 1.4rem;
+  color: rgba(51,51,51,0.85);
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+/* Centered stacked list */
+.services-container,
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 760px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Individual pill-like service row */
+.service-card,
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 14px;
+  padding: 16px 20px;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  background: rgba(255, 223, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.service-card:hover,
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(194, 148, 0, 0.35);
+  border-color: rgb(227, 18, 18);
+}
+
+.service-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 12px;
+  border: 2px solid rgba(5, 5, 5, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 223, 0, 0.08);
+  color: #333;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.service-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.service-text {
+  text-align: left;
+  flex: 1 1 auto;
+  min-width: 180px;
+}
+
+.service-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.service-desc {
+  font-size: 0.98rem;
+  color: rgba(51,51,51,0.85);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* CTA bar at bottom */
+.services-cta {
+  display: inline-block;
+  margin: 48px auto 0 auto;
+  padding: 12px 28px;
+  background: #f1b600;
+  color: #222;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(194, 148, 0, 0.35);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .services-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services {
+    padding: 60px 18px;
+  }
+
+  .services-title {
+    font-size: 2.2rem;
+  }
+
+  .service-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .service-name {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    gap: 16px;
+  }
+
+  .service-card,
+  .service-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+
+  .service-icon-wrapper {
+    margin-bottom: 8px;
+  }
+
+  .service-text {
+    text-align: left;
+    width: 100%;
+  }
+
+  .services-cta {
+    padding: 10px 20px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .services {
+    padding: 40px 12px;
+  }
+
+  .services-title {
+    font-size: 1.8rem;
+  }
+
+  .service-name {
+    font-size: 1rem;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this to the service items */
+.service-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-item.animate {
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* Optional stagger delay for multiple items */
+.service-item:nth-child(1).animate { animation-delay: 0.1s; }
+.service-item:nth-child(2).animate { animation-delay: 0.25s; }
+.service-item:nth-child(3).animate { animation-delay: 0.4s; }
+.service-item:nth-child(4).animate { animation-delay: 0.55s; }
+
+/* Hover scaling (already present) */
+.service-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(194, 148, 0, 0.35);
+  border-color: rgb(227, 18, 18);
+}
+
