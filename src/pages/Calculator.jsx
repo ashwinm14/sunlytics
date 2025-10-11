@@ -3,7 +3,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "./Calculator.css";
 
-// Cities with sunlight hours and unit cost
+
 const indianCities = [
   { name: "Delhi", pincode: "110001", sunlightHours: 5, unitCost: 6 },
   { name: "Mumbai", pincode: "400001", sunlightHours: 5.5, unitCost: 7 },
@@ -233,4 +233,5 @@ export default function Calculator() {
     </section>
   );
 }
+
 
