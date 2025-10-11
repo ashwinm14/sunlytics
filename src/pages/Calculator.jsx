@@ -3,7 +3,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "./Calculator.css";
 
-
+//random avg values
 const indianCities = [
   { name: "Delhi", pincode: "110001", sunlightHours: 5, unitCost: 6 },
   { name: "Mumbai", pincode: "400001", sunlightHours: 5.5, unitCost: 7 },
@@ -15,7 +15,9 @@ const indianCities = [
   { name: "Ahmedabad", pincode: "380001", sunlightHours: 5.4, unitCost: 6 },
   { name: "Jaipur", pincode: "302001", sunlightHours: 5.2, unitCost: 6 },
   { name: "Lucknow", pincode: "226001", sunlightHours: 4.9, unitCost: 6 },
+  { name: "Kerala", pincode: "226005", sunlightHours: 4.8, unitCost: 6 },
 ];
+
 
 export default function Calculator() {
   const [formData, setFormData] = useState({
@@ -233,5 +235,6 @@ export default function Calculator() {
     </section>
   );
 }
+
 
 
