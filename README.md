@@ -1,5 +1,5 @@
 # ☀️ Sunlytics — Solar Energy Calculator & Awareness Platform
-
+    
 ## 🌞 Project Overview
 Sunlytics is a modern, responsive web application designed to promote solar energy awareness and help users estimate their solar power potential.  
 The platform empowers individuals and communities to understand how switching to solar energy can reduce costs and contribute to a sustainable future.
